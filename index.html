@@ -63,6 +63,14 @@ table{width:100%;border-collapse:collapse}td,th{padding:9px 8px;border-bottom:1p
 @media print{header,footer,.noprint,body::before{display:none!important}}
 #down{display:none;position:fixed;inset:0;z-index:100;background:var(--bg);place-items:center;padding:20px}.card p{white-space:pre-line}
 .org{display:flex;flex-direction:column;align-items:center;gap:0}.orow{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;align-items:flex-start}.dep{display:flex;flex-direction:column;gap:8px;align-items:stretch;min-width:200px}.on{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 16px;text-align:center;font-weight:600;font-size:14px}.on.top{background:var(--pri);color:#fff;border-color:var(--pri)}.vl{width:2px;height:22px;background:var(--line)}
+
+/* Academy concept-note sections */
+.concept-intro{margin-top:22px}.concept-grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));margin:16px 0}
+.concept-card{background:var(--card);border:1px solid var(--line);border-radius:15px;padding:18px}
+.concept-card h3{margin:4px 0 8px;color:var(--pri)}.concept-card p{margin:0;color:var(--mut)}
+.concept-band{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:12px;padding:16px 18px;margin:14px 0}
+.concept-band h3{margin:0 0 6px;color:var(--pri)}.concept-band p{margin:0}
+.concept-list{margin:8px 0 0;padding-left:20px}.concept-list li{margin:4px 0}
 </style>
 </head>
 <body>
@@ -87,6 +95,19 @@ table{width:100%;border-collapse:collapse}td,th{padding:9px 8px;border-bottom:1p
 <div class="card"><div class="ic">🎥</div><h3>Live Classes</h3><p>Interactive lessons with real teachers. Ask questions and learn together.</p><a href="#live">View timetable →</a></div>
 <div class="card"><div class="ic">📄</div><h3>Downloadable Notes</h3><p>Clear, exam-focused notes and worksheets in PDF, ready to save or print.</p><a href="#notes">Browse notes →</a></div>
 <div class="card"><div class="ic">▶️</div><h3>Teaching Videos</h3><p>Step-by-step recorded lessons you can pause, replay and revise anytime.</p><a href="#videos">Watch videos →</a></div>
+</div>
+
+<div class="concept-intro">
+<h2>Who We Are</h2>
+<p class="sub">The Aziel Smart Academy Kisumu is a non-profit organization working in informal settlements and vulnerable communities in Kisumu County and neighbouring regions. We support needy and at-risk school-going children facing barriers to quality education.</p>
+<div class="concept-band"><h3>Our holistic approach</h3><p>We combine STEM learning support, career mentorship and leadership development, age-appropriate SRHR education, and structured economic empowerment for parents—helping children thrive while families build the capacity to sustain education.</p></div>
+<div class="concept-grid">
+<div class="concept-card"><h3>STEM &amp; Learning Support</h3><p>Academic coaching, virtual and in-person classes, weekly tests, competitions and digital literacy.</p></div>
+<div class="concept-card"><h3>Mentorship &amp; Leadership</h3><p>Teenage life skills, career guidance, ethical leadership and values-based development.</p></div>
+<div class="concept-card"><h3>Adolescent Wellbeing</h3><p>Age-appropriate SRHR information, menstrual hygiene support, safeguarding and parental engagement.</p></div>
+<div class="concept-card"><h3>Family Empowerment</h3><p>Practical business and livelihood skills that help parents progressively support education costs.</p></div>
+</div>
+<p><a class="btn alt" href="#about">Discover our mission and programmes</a></p>
 </div>
 </section>
 
@@ -145,18 +166,51 @@ table{width:100%;border-collapse:collapse}td,th{padding:9px 8px;border-bottom:1p
 
 <section class="page" id="about">
 <h2 style="margin-top:0">About The Aziel Smart Academy</h2>
-<div class="card"><p>The Aziel Smart Academy is a Kenyan learning community that brings quality teaching to every student through technology. Our teachers deliver live lessons, share well-prepared notes and record clear video lessons so no learner is left behind.</p>
-<p><b>Our motto:</b> Nurturing Excellence | Building Character | Empowering Tomorrow.</p>
-<p><b>Our mission:</b> make smart, accessible and affordable education available to every learner.</p></div>
-<h2>Coordinators</h2><div class="grid"><div class="card"><h3>Mr. Eric Omondi</h3><p>Ngere Boys</p></div><div class="card"><h3>Mr. John Otieno</h3><p>Koru Girls</p></div><div class="card"><h3>Mr. Brian Odipo</h3><p>Chianda Boys</p></div></div>
-<h2>Management structure</h2><p class="sub">Organizational reporting hierarchy</p>
-<div class="org"><div class="on top">Founder / Director</div><div class="vl"></div>
-<div class="orow"><div class="on">Advisory Board</div><div class="on">Legal and Compliance Counsel</div><div class="on top">Operations Coordinator</div></div><div class="vl"></div>
-<div class="orow">
-<div class="dep"><div class="on top">Mentorship Department</div><div class="on">Volunteers</div><div class="on">Lead Mentors</div></div>
-<div class="dep"><div class="on top">Academic Department</div><div class="on">Tutors</div><div class="on">Scholarship</div></div>
-<div class="dep"><div class="on top">Admin &amp; Finance</div><div class="on">Finance Officer</div><div class="on">Logistics</div></div>
-</div></div>
+<div class="card">
+<p>The Aziel Smart Academy Kisumu is a non-profit organization working in the informal settlements and vulnerable communities of Kisumu County and neighbouring regions. The organization serves needy and at-risk school-going children who face barriers to accessing quality education due to poverty, unstable family environments, and limited community support.</p>
+<p>The Academy transforms children’s lives through a holistic model combining STEM learning support, career mentorship and leadership development, SRHR education, and structured economic empowerment of parents. This integrated approach supports children’s academic progress while helping families build the capacity to sustain education over time.</p>
+</div>
+<h2>Our Vision, Mission &amp; Purpose</h2>
+<div class="concept-grid">
+<div class="concept-card"><h3>Vision</h3><p>A society where every disadvantaged child thrives academically and socially, supported by empowered households capable of sustaining long-term education and wellbeing.</p></div>
+<div class="concept-card"><h3>Mission</h3><p>To improve education outcomes, wellbeing, leadership capacity, and economic resilience among vulnerable children and their families through learning support, mentorship, SRHR awareness, and livelihood strengthening.</p></div>
+<div class="concept-card"><h3>Purpose</h3><p>To provide holistic child development and empower families to break cycles of poverty, ensuring sustained educational investment and long-term community transformation.</p></div>
+</div>
+<h2>Our Strategic Programmes</h2>
+<div class="concept-band">
+<h3>1. STEM Coaching &amp; Digital/Physical Learning Support</h3>
+<p>High-quality academic coaching through online Nyanza Top Virtual Classes and in-person sessions. Subjects include Mathematics, Sciences and Languages, supported by weekly tests, examiners’ talks, essay competitions, mathematics and science contests, and set-book discussions.</p>
+<ul class="concept-list"><li>Improved academic performance and mastery of STEM subjects.</li><li>Higher transition and retention across primary, secondary and tertiary education.</li><li>Increased digital literacy, confidence and future employability.</li></ul>
+</div>
+<div class="concept-band">
+<h3>2. Career Mentorship, Teenage Support &amp; Leadership Development</h3>
+<p>Mentorship covers teenage life skills, substance-abuse awareness, phone-use habits, self-identity, spirituality and mental wellbeing; career guidance for JSS and senior secondary learners, including university/TVET course selection and application support; and leadership, ethics and values-based training.</p>
+<ul class="concept-list"><li>Youth with clarity of purpose, strong ethical grounding and positive identity.</li><li>Greater resilience against negative peer pressure and social challenges.</li><li>Responsible, honest and community-focused future leaders.</li></ul>
+</div>
+<div class="concept-band">
+<h3>3. SRHR Education &amp; Adolescent Wellbeing</h3>
+<p>The Academy integrates age-appropriate SRHR information and support into mentorship and learning programmes, including menstrual hygiene support for girls, prevention of early pregnancies and gender-based violence, and parental sessions on adolescent wellbeing and safeguarding.</p>
+<ul class="concept-list"><li>Reduced teenage pregnancies and school dropout.</li><li>Improved adolescent knowledge and confidence about personal safety and wellbeing.</li><li>Stronger parental support for adolescent health and development.</li></ul>
+</div>
+<div class="concept-band">
+<h3>4. Parental Economic Empowerment &amp; Graduation Model</h3>
+<p>Families receive business skills and start-up support to strengthen household livelihoods. Components include training in locally profitable micro-enterprises or agriculture, start-up capital/stipends through a revolving-loan model, quarterly business progress reporting, and home-improvement support where a child lacks a conducive learning environment.</p>
+<h3 style="font-size:18px;margin-top:14px">Four-year education cost-sharing pathway</h3>
+<table><thead><tr><th>Year</th><th>Aziel Academy</th><th>Parents</th></tr></thead><tbody>
+<tr><td>Year 1</td><td>100%</td><td>0%</td></tr>
+<tr><td>Year 2</td><td>75%</td><td>25%</td></tr>
+<tr><td>Year 3</td><td>50%</td><td>50%</td></tr>
+<tr><td>Year 4</td><td>25%</td><td>75%</td></tr>
+</tbody></table>
+<ul class="concept-list"><li>Increased household income and financial resilience.</li><li>Parents progressively assume responsibility for education costs.</li><li>Reduced household poverty and dependence on aid.</li><li>Improved home environments for learning and child wellbeing.</li></ul>
+</div>
+<h2>Our Expected Impact</h2>
+<div class="card"><ul class="concept-list">
+<li>Vulnerable children achieve better learning outcomes and stronger education pathways.</li>
+<li>Adolescents experience improved wellbeing, health protection and leadership capacity.</li>
+<li>Parents establish sustainable livelihoods and confidently invest in their children’s education.</li>
+<li>Communities benefit from reduced poverty, increased educational attainment and emerging ethical leaders.</li>
+</ul></div>
 <h2>Our values</h2>
 <div class="grid"><div class="card"><div class="ic">🎓</div><h3>Excellence</h3><p>High standards in teaching and results.</p></div><div class="card"><div class="ic">🤝</div><h3>Support</h3><p>Every student is guided and encouraged.</p></div><div class="card"><div class="ic">💡</div><h3>Innovation</h3><p>Modern tools that make learning easier.</p></div></div>
 </section>
@@ -165,7 +219,7 @@ table{width:100%;border-collapse:collapse}td,th{padding:9px 8px;border-bottom:1p
 <h2 style="margin-top:0">Contact Us</h2><p class="sub">Questions about enrolment or classes? Send us a message.</p>
 <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr))">
 <div class="card"><label for="cn">Name</label><input id="cn"><label for="ce">Phone or email</label><input id="ce"><label for="cm">Message</label><textarea id="cm" rows="4"></textarea><div class="row"><button class="btn" id="send" type="button">Send via WhatsApp</button></div></div>
-<div class="card"><h3>Reach us</h3><p>📞 0728 646 984 (Coordinator)<br>📞 0781 490 933 (Teacher Erick)<br>💬 WhatsApp: 0728 646 984</p><p class="meta">Holiday Online Tuition: 2 Nov – 18 Dec 2026</p></div>
+<div class="card"><h3>Reach us</h3><p>📞 0728 646 984<br>📞 0781 490 933 (Mr. Erick)<br>💬 WhatsApp: 0728 646 984</p><p class="meta">Holiday Online Tuition: 2 Nov – 18 Dec 2026</p></div>
 </div>
 </section>
 
