@@ -54,3 +54,10 @@ Web administrator or school admin: **Staff area > Staff > Add staff** (email + r
 
 ## Not included yet
 Student/parent portal, results and report cards, online fee payment (M-Pesa Daraja). The demo versions were removed; these need extra tables and a payment service. Fees are still paid by Paybill 400200, account 40722.
+
+
+## Google Meet classes
+- Teachers create or start a meeting at https://meet.google.com/new, then copy the meeting URL.
+- In Staff → Host an online class, paste the Google Meet URL into the required Google Meet link field when scheduling.
+- Students use the Join Class link on the Live Classes page to open Google Meet.
+- Existing class records keep their previously saved meeting URLs; replace any old Jitsi URLs in the class records with new Google Meet links.
