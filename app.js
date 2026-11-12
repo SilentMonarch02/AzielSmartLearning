@@ -45,9 +45,17 @@ $("dx").onclick=closeD;$("dlg").addEventListener("click",function(e){if(e.target
 
 /* ---------- admissions, fees, contact (WhatsApp) ---------- */
 var V=function(i){return $(i).value.trim()};
-var SERV=["High school students","Adult learning","Reproductive health","Mental health care and substance abuse","Goal setting","Self awareness and skills","Academic motivation","Professional short courses"];
+var SERV=["High school students","Adult learning","Professional short courses","Mentorship Programs"];
+var MENTORSHIP_PROGRAMS=[
+{title:"Reproductive health",description:"Age-appropriate reproductive health education, menstrual health awareness, personal safety, healthy relationships and guidance on where to seek trusted support."},
+{title:"Mental health care and substance abuse",description:"Wellbeing awareness, emotional resilience, stress management, peer support and education on preventing substance misuse."},
+{title:"Goal setting",description:"Guided sessions to identify personal and academic goals, break them into achievable steps and track progress."},
+{title:"Self awareness and skills",description:"Activities that build confidence, self-understanding, communication, teamwork, decision-making and leadership skills."},
+{title:"Academic motivation",description:"Study habits, time management, revision planning, confidence-building and encouragement to stay engaged in learning."}
+];
 $("rsv").innerHTML=SERV.map(function(s){return'<label style="font-weight:400"><input type="checkbox" data-sv="'+esc(s)+'" style="width:auto"> '+esc(s)+"</label>"}).join("");
-$("svcGrid").innerHTML=SERV.map(function(s){return'<div class="card"><h3 style="font-size:17px;margin:0">'+esc(s)+"</h3></div>"}).join("");
+$("svcGrid").innerHTML='<div class="card"><h3 style="font-size:17px;margin:0">High school students</h3></div><div class="card"><h3 style="font-size:17px;margin:0">Adult learning</h3></div><div class="card"><h3 style="font-size:17px;margin:0">Professional short courses</h3></div><div class="card" style="cursor:pointer"><button type="button" id="mentorshipToggle" aria-expanded="false" aria-controls="mentorshipDetails" style="all:unset;display:block;width:100%;cursor:pointer;font-weight:700;text-align:center">Mentorship Programs <span aria-hidden="true">＋</span></button><div id="mentorshipDetails" hidden style="margin-top:16px;text-align:left"><div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px">'+MENTORSHIP_PROGRAMS.map(function(p){return'<div class="card" style="padding:14px"><h3 style="font-size:16px;margin:0 0 8px">'+esc(p.title)+'</h3><p style="margin:0">'+esc(p.description)+'</p></div>'}).join('')+'</div></div></div>';
+$("mentorshipToggle").onclick=function(){var panel=$("mentorshipDetails"),expanded=this.getAttribute("aria-expanded")==="true";panel.hidden=expanded;this.setAttribute("aria-expanded",String(!expanded));this.querySelector("span").textContent=expanded?"＋":"−";};
 $("rsend").onclick=async function(){var sv=[].filter.call($("rsv").querySelectorAll("[data-sv]"),function(c){return c.checked}).map(function(c){return c.getAttribute("data-sv")});
 if(!V("rn")||!V("rph")||!sv.length){$("rmsg").textContent="Please enter your name, phone and choose at least one service.";return}
 var hs=sv.indexOf("High school students")>-1,msg="Registration\nName: "+V("rn")+"\nPhone: "+V("rph")+"\nEmail: "+V("re")+"\nDOB: "+V("rd")+"\nGender: "+V("rg")+"\nServices: "+sv.join(", ")+(hs?"\nClass: "+V("rc"):"")+"\nGuardian: "+V("rp")+"\nNotes: "+V("rs");
