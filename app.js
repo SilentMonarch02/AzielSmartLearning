@@ -4,7 +4,7 @@ try{if(CFG.url&&CFG.key&&window.supabase)sb=window.supabase.createClient(CFG.url
 var $=function(i){return document.getElementById(i)};
 function esc(x){return String(x==null?"":x).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
 function okU(u){return/^https:\/\//.test(u||"")}
-var SUBJ=["Mathematics","English","Kiswahili","Biology","Chemistry","Physics","Computer Studies","French","Home Science","Building & Construction"],LV=["Form 3","Form 4","Grade 10","Grade 11"];
+var SUBJ=["Mathematics","English","Kiswahili","Biology","Chemistry","Physics","Computer Studies","French","Home Science","Building & Construction"],LV=["Form 4","Grade 11"];
 var LBL={web_admin:"Web administrator",school_admin:"School admin",teacher:"Teacher",student:"Student"};
 var STU=[],PAY=[],ATT=[],REG=[],MYS=null,ME=null,SET={site_enabled:true,message:""},POSTS=[],RES=[],VL=[];
 function opts(a){return a.map(function(s){return"<option>"+esc(s)+"</option>"}).join("")}
@@ -122,7 +122,7 @@ else{var bl=blocked(s);
 h+='<div class="card" style="margin-top:16px"><h3>Payment status: '+(bl?'<span style="color:#e5384a">BLOCKED</span>':'<span class="ok">ACTIVE</span>')+'</h3><p>'+(bl?esc(lock()):"Your lessons are open until <b>"+due(s)+"</b>. Pay before this date to keep learning.")+'</p><p class="meta">Last payment: '+(s.last_paid_on||"none yet")+" · Classes attended: "+cnt(s.id,"present")+" · Missed: "+cnt(s.id,"missed")+'</p><div class="row"><a class="btn" href="#live">Live classes</a><a class="btn alt" href="#notes" style="color:var(--pri)">Notes</a><a class="btn alt" href="#videos" style="color:var(--pri)">Videos</a><a class="btn alt" href="#fees" style="color:var(--pri)">How to pay</a></div></div>';
 h+=payHtml(s);h+='<div class="card" style="margin-top:16px"><h3>My payments</h3>'+(PAY.map(function(p){return"<div"+ROW+"><span>"+esc(p.paid_on)+" · KES "+p.amount+'</span><span class="meta">'+esc(p.reference||"")+"</span></div>"}).join("")||'<p class="meta">No payments recorded yet.</p>')+"</div>"}
 b.innerHTML=h;bindPay(s);$("sout").onclick=async function(){await sb.auth.signOut();ME=null;await boot()}}
-var WK={"Form 3":800,"Grade 10":600};
+var WK={"Form 4":800,"Grade 11":600};
 function payHtml(s){return'<div class="card" style="margin-top:16px"><h3>Pay with M-Pesa</h3><p class="meta">Enter your M-Pesa number and the amount. A prompt appears on your phone: enter your PIN to pay. No code to copy.</p><div class="two">'+fl("M-Pesa phone number",'<input id="mp" type="tel" value="'+esc(s.parent_phone||"")+'" placeholder="07XXXXXXXX">')+fl("Amount (KES)",'<input id="ma" type="number" min="1" value="'+(WK[s.level]||"")+'">')+'</div><div class="row"><button class="btn" id="mpb" type="button">Pay now</button></div><p class="meta" id="mpm"></p></div>'}
 function bindPay(s){var b=$("mpb");if(!b)return;b.onclick=async function(){var m=$("mpm");if(!V("mp")||Number(V("ma"))<1){m.textContent="Enter your M-Pesa number and the amount.";return}
 b.disabled=true;m.textContent="Sending the payment request…";
